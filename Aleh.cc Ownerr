@@ -1,4 +1,3 @@
-
 getgenv().keytoclick = "C"
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
@@ -9,11 +8,11 @@ vim:SendKeyEvent(true, keytoclick, false, game)
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 
-game.StarterGui:SetCore("SendNotification", {
-    Title = "g.6666";
-    Text = "Aleh.cc";
-
-})
+Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/vKhonshu/intro2/main/ui2"))()
+		local NotifyLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vKhonshu/intro/main/ui"))()
+		NotifyLib.prompt('Aleh.cc [BETA]', 'Welcome', 5)
+		NotifyLib.prompt('Aleh.cc ', 'Owner: g.6666 (Alehestelionato)', 5)
+		NotifyLib.prompt('Aleh.cc', 'loading..', 5)
 
 local player = game.Players.LocalPlayer
 
@@ -72,27 +71,16 @@ testSection:AddButton("Tactical Shotgun", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(470.877533, 45.1272316, -620.630676, 0.999999821, 0.000604254019, -2.60802135e-08, -0.000604254019, 0.999999821, -8.63220048e-05, -2.60802135e-08, 8.63220048e-05, 1)
 end)
 
-testSection:AddButton("Silent aimLegi", 
-function()
-  getgenv().Silent = {
-    Settings = {
-        Enabled = true,
-        AimPart = "UpperTorso",
-        Prediction = 0.1467901647392,
-        WallCheck = true,
-        Visualize = true,
-        AutoPrediction = true,
-    },
-    FOV = {
-        Enabled = true,
-        Size = 28,
-        Filled = false,
-        Thickness = 0.66,
-        Transparency = 0.000000001,
-        Color = Color3.fromRGB(255,255,255),
-    },
-}
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberPlaysYT/Aura-x/main/Source", true))()
+testSection:AddButton("speed", function()
+    loadstring(game:HttpGetAsync("https://pastebin.com/raw/XiqsUXHj", true))()
+end)
+
+testSection:AddButton("TpWalk", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealXORA/Roblox-Scripts/main/Tpwalk%20V4%20%5B%20BETA%20%5D.lua",true))()
+end)
+
+testSection:AddButton("AntiLocker", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
 end)
 
 testSection:AddButton("SilentAimUnlegit", 
@@ -221,7 +209,57 @@ function()
 }
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bobbbb-b/B/main/77_SJQ0ZC.lua"))()
 end)
-    
+
+local testSection = AimingTab:CreateSector("Silent aim", "left")
+
+testSection:AddToggle(
+    "Enable",
+    false,
+    function(first)
+        getgenv().Enabled = first
+    end
+)
+
+testSection:AddDropdown(
+    "HitPart",
+    {"Head", "HumanoidRootPart", "UpperTorso", "LowerTorso", "Penis"},
+    "UpperTorso",
+    false,
+    function(Option)
+        getgenv().RecurringPoint = "Option"
+    end
+)
+
+testSection:AddTextbox(
+    "Silent Predction",
+    7,
+    function(State)
+        getgenv().PredictionAmount = State
+    end
+)
+        
+        getgenv().Silent = {
+        Settings = {
+        Enabled = true,
+        AimPart = "UpperTorso",
+        Prediction = 0.1467901647392,
+        WallCheck = true,
+        Visualize = true,
+        AutoPrediction = true,
+    },
+    FOV = {
+        Enabled = true,
+        Size = 28,
+        Filled = false,
+        Thickness = 0.66,
+        Transparency = 0.000000001,
+        Color = Color3.fromRGB(255,255,255),
+    },
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CyberPlaysYT/Aura-x/main/Source", true))()
+
+--]]
+
 local testSection = AimingTab:CreateSector("camlock", "left")
 
 testSection:AddToggle(
