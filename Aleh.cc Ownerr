@@ -232,7 +232,7 @@ testSection:AddDropdown(
 
 testSection:AddTextbox(
     "Silent Predction",
-    7,
+    nil,
     function(State)
         getgenv().PredictionAmount = State
     end
